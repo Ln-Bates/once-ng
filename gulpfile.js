@@ -2,7 +2,7 @@
  *      @ Author:Bates Wang
  *      @ Time: 2016/8/22.
  */
-
+//  require module
 var
         gulp = require("gulp"),
         sass = require("gulp-ruby-sass"),
@@ -15,7 +15,10 @@ var
         minPng = require("imagemin-pngquant"),
         modifyFileName = require("gulp-rename"),
         change = require("gulp-changed"),
-        autoEnd = require("gulp-autoprefixer");
+        autoEnd = require("gulp-autoprefixer"),
+        minHtml = require("gulp-htmlmin"),
+        rev = require("gulp-rev"),
+        revCollector = require('gulp-rev-collector');
 
 /*Start     work*/
 
@@ -27,26 +30,32 @@ gulp.task("server",function(){
                 "open":true
             }));
 });
+
 //  watchFile
 gulp.task("watch",function(){
+    gulp.watch("./template/*.html",["minHtml"]);
     gulp.watch("./src/sass/*.scss",["sass"]);
     gulp.watch("./src/images/*.{png,jpg,gif,svg}", ["minImg"]);
     gulp.watch("./src/js/*.js", ["minJs"]);
     gulp.watch("./src/css/*.css",["concat"]);
 });
+
 //  minJs
 gulp.task("minJs",function(){
     gulp.src("./src/js/*.js")
+            .pipe(concatFile("bundle.js"))
             .pipe(modifyFileName({"suffix":".min"}))
             .pipe(minJs())
             .pipe(gulp.dest("./dist/js"));
 });
+
 //  useSass
 gulp.task("sass",function(){
     sass("./src/sass/*.scss")
             .pipe(gulp.dest("./src/css"))
             .pipe(livereload())
 });
+
 //  minCss
 //gulp.task("minCss",function(){
 //    gulp.src("./src/css/*.css")
@@ -54,6 +63,7 @@ gulp.task("sass",function(){
 //            .pipe(minCss())
 //            .pipe(gulp.dest("./dist/css"))
 //});
+
 //  minImg
 gulp.task("minImg",function(){
     gulp.src("./src/images/*.{png,jpg,gif,svg}")
@@ -64,15 +74,40 @@ gulp.task("minImg",function(){
                 "use": [minPng()]
             }))
 });
-gulp.task("concat",function(){
-    gulp.src("./src/css/*.css")
-            .pipe(concatFile("bundle.css"))
-            .pipe(modifyFileName({"suffix":".min"}))
-            .pipe(minCss())
-            .pipe(gulp.dest("./dist.css"));
+
+//  minHtml
+
+gulp.task("minHtml",function(){
+    gulp.src("./template/*.html")
+            .pipe(minHtml({
+                collapseWhitespace:true,    //清除空格压缩代码
+                collapseBooleanAttributes:true,     //省略布尔值
+                removeComments:true,            //清除注释
+                removeEmptyAttributes:true,      //清除空属性
+                minifyJS:true,
+                minifyCss:true
+            }))
+            .pipe(gulp.dest("./dist/view"));
 });
 
+//  concatFile
+gulp.task("concat",function(){
+    gulp.src("./src/css/*.css")
+            .pipe(concatFile("common.css"))
+            .pipe(modifyFileName({"suffix":".min"}))
+            .pipe(minCss())
+            .pipe(gulp.dest("./dist/css"));
+});
+gulp.task("concatLibs",function(){
+    gulp.src([
+        "./src/lib/angular.min.js",
+        "./src/lib/angular-route.min.js",
+        "./src/lib/angular-resource.min.js",
+        "./src/lib/angular-animate.min.js"])
+            .pipe(concatFile("angular.min.js"))
+            .pipe(gulp.dest("./dist/js"));
+});
 
 //  default run
-gulp.task("default",["watch","server","minJs","sass","concat","minImg"]);
+gulp.task("default",["watch","server","minJs","sass","minHtml","concat","concatLibs","minImg"]);
 /*End       work*/

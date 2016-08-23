@@ -1,15 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <title>Automation MVC</title>
-    <script src="./src/lib/angular.min.js"></script>
-    <script src="./src/lib/angular-route.min.js"></script>
-    <script src="./src/lib/angular-resource.min.js"></script>
-    <script src="./src/lib/angular-animate.min.js"></script>
-    <link rel="stylesheet" href="./dist/css/main.min.css">
+    <!--<script src="./src/lib/angular.min.js"></script>-->
+    <!--<script src="./src/lib/angular-route.min.js"></script>-->
+    <!--<script src="./src/lib/angular-resource.min.js"></script>-->
+    <!--<script src="./src/lib/angular-animate.min.js"></script>-->
+    <script src="./dist/js/angular.min.js"></script>
+    <link rel="stylesheet" href="./dist/css/common.min.css">
+    <style>
+        .view-animate {
+            transition: .3s all;
+            position: absolute;
+            width: 100%;
+        }
+
+        .view-animate.ng-enter {
+            opacity: 0;
+        }
+        .view-animate.ng-enter-active {
+            opacity: 1;
+        }
+        .view-animate.ng-leave {
+            opacity: 0;
+        }
+        .view-animate.ng-leave-active {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
+<a href="#/list">List</a>
+<a href="#/details">List</a>
+<a href="#/remarks">List</a>
+<a href="#/media">List</a>
+<div ng-view class="view-animate"></div>
+
+<script src="./dist/js/bundle.min.js"></script>
 
 </body>
 </html>
