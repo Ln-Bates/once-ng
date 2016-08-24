@@ -1,0 +1,234 @@
+@import "base";
+@import "colors";
+/*page change animation     Start*/
+.view-animate {
+    transition: .3s all;
+    position: absolute;
+    width: 100%;
+}
+.view-animate.ng-enter {
+    opacity: 0;
+}
+.view-animate.ng-enter-active {
+    opacity: 1;
+}
+.view-animate.ng-leave {
+    opacity: 0;
+}
+.view-animate.ng-leave-active {
+    opacity: 1;
+}
+/*page change animation     End*/
+
+/*buttons   Start*/
+.btn{
+    @include prefix(transition,.5s);
+    @include circular-bead(4px);
+    @include border($gray);
+    color: #fff;
+    padding: 6px 12px;
+}
+.btn.default{
+    color: #000;
+    &:hover,&:focus,&:active{
+        background-color: $transparent-status;
+    }
+}
+.btn.primary{
+    &:hover,&:focus,&:active{
+        background-color: $blue-status;
+    }
+}
+.btn.success{
+    &:hover,&:focus,&:active{
+        background-color: $green-status;
+    }
+}
+.btn.warning{
+    &:hover,&:focus,&:active{
+        background-color: $orange-status;
+    }
+}
+.btn.error{
+    &:hover,&:focus,&:active{
+        background-color: $red;
+    }
+}
+/*buttons   End*/
+
+/*form      Start*/ //horizontally  vertically
+.form-inline{
+    label{
+        font-weight: bold;
+    }
+    input,select,button,label{
+        @extend %inline-block;
+    }
+}
+.form-block{
+    label{
+        font-weight: bold;
+    }
+    input,select,button,label{
+        @extend %block;
+        width: 100%;
+    }
+    .form-group{
+        @extend %clear;
+        label,input{
+            @extend %p-l;
+        }
+        label{
+            width: 20%;
+        }
+        input{
+            width: 80%;
+        }
+    }
+}
+.form-control{
+    @extend %block;
+    @include prefix(transition,.5s);
+    @include circular-bead(4px);
+    @include border($gray);
+    padding-left: $innerSize;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    &:focus{
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+    }
+}
+/*form      End*/
+
+/*clearFloat    Start*/
+.clear{
+    @extend %clear;
+}
+/*clearFloat    End*/
+
+/*thumbnail     Start*/
+.thumbnail{
+    @include circular-bead(4px);
+    @include border($gray);
+    padding: 6px;
+    img{
+        @extend %block;
+        width: 100%;
+    }
+    .caption{
+        .title{
+            font-size: $h3;
+        }
+        .describe{
+            line-height: 30px;
+        }
+        .details-btn{
+            @extend %inline-block;
+        }
+    }
+}
+/*thumbnail     End*/
+
+/*graphic-introduction  Start*/
+
+.media{
+    width: 100%;
+    overflow: hidden;
+    .pic,.text{
+        display: table-cell;
+        @extend %v-top;
+    }
+    .pic.middle{
+        @extend %v-middle;
+    }
+    .pic.bottom{
+        @extend %v-bottom;
+    }
+    .pic{
+        width: 20%;
+        padding-right:$innerSize;
+    }
+    .text{
+        width: 10000px;
+    }
+}
+
+/*graphic-introduction  End*/
+
+/*item      Start*/
+.list-group{
+    .title{
+        font-size: $h3;
+        font-weight: bold;
+    }
+    .item{
+        padding: 0 12px;
+        li{
+            line-height: 30px;
+            border-bottom:1px solid #ddd;
+            &:hover{
+                background-color: $gray;
+            }
+        }
+    }
+}
+/*item      End*/
+
+/*table     Start*/
+.table{
+    width: 100%;
+    max-width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    th,td{
+        padding: 8px;
+        line-height: 1.42857143;
+        border-top:1px solid #ddd;
+    }
+    thead{
+        font-weight: bold;
+    }
+    tbody{
+        th{
+            font-weight: bold;
+        }
+    }
+}
+.bordered{
+    th,td{
+        @include border(#ddd);
+    }
+}
+.table-hover{
+    tbody{
+        tr{
+            &:hover{
+                background-color: #f5f5f5;
+            }
+        }
+    }
+}
+/*table     End*/
+
+/*fieldset  Start*/
+.fieldset{
+    @extend %block,%rel;
+    padding-top:6px;
+    padding-bottom:6px;
+    @include border();
+    .title{
+        @extend %abs,%inline-block;
+        background: #fff;
+        height: 30px;
+        line-height: 30px;
+        margin-top:-15px;
+        left: $innerSize;
+    }
+    .describe{
+        line-height: 30px;
+    }
+}
+/*fieldset  End*/

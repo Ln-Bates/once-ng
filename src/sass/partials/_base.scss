@@ -1,0 +1,129 @@
+//  VARIABLE    Start
+//Colors    &&  ColorsStatus
+$transparent:transparent;
+$transparent-status:#e6e6e6;
+$blue:#286090;
+$blue-status:#286090;
+$green:#5cb85c;
+$green-status:#449d44;
+$orange:#f0ad4e;
+$orange-status:#ec971f;
+$red:#d9534f;
+$red-status:#c9302c;
+$gray:#eeeff4;
+$white:#fff;
+$black:#111;
+//FontSize  &&  innerSize
+$default:14px;
+$h1:20px;
+$h2:18px;
+$h3:16px;
+$h4:14px;
+$h5:12px;
+$h6:9px;
+$innerSize:15px;
+
+//  VARIABLE    End
+
+//  MIXIN       Start
+@mixin prefix($attr,$val){
+    -webkit-#{$attr}: $val;
+    -moz-#{$attr}: $val;
+    -ms-#{$attr}: $val;
+    -o-#{$attr}: $val;
+    #{$attr}: $val;
+}
+@mixin eleCenter(){
+    @extend %abs;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+@mixin directionCenter($direction,$eleHeight){
+    @extend %abs;
+    #{$direction}:50%;
+    margin-#{$direction}:-($eleHeight/2);
+}
+@mixin circular-bead($val){
+    @include prefix(border-radius,$val);
+}
+@mixin border($color:#eeeff4){
+    border: 1px solid $color;
+}
+//  MIXIN       End
+
+//  PLACEHOLDER     Start
+%rel{
+    position: relative;
+}
+%abs{
+    position: absolute;
+}
+%fix{
+    position: fixed;
+}
+%p-l{
+    float: left;
+}
+%p-r{
+    float: right;
+}
+%block{
+    display: block;
+}
+%inline{
+    display: inline;
+}
+%inline-block{
+    display: inline-block;
+}
+%none{
+    display: none;
+}
+%grid{
+    @extend %p-l;
+    padding-left: $innerSize;
+    padding-right: $innerSize;
+    @include prefix(box-sizing,border-box);
+}
+%clear{
+    &:before,&:after{
+        content: "";
+        display: table;
+    }
+    &:after{
+        clear: both;
+        overflow: hidden;
+    }
+}
+%v-top{
+    vertical-align: baseline;
+}
+%v-middle{
+    vertical-align: middle;
+}
+%v-bottom{
+    vertical-align: bottom;
+}
+%t-left{
+    text-align: left;
+}
+%t-center{
+    text-align: center;
+}
+%t-right{
+    text-align: right;
+}
+%t-justify{
+    text-align: justify;
+}
+%ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+//  PLACEHOLDER     End
+
+

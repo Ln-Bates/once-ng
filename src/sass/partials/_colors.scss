@@ -1,0 +1,47 @@
+@import "base";
+
+.default{
+    background-color: $default;
+}
+.primary{
+    background-color: $blue;
+}
+.success{
+    background-color: $green;
+}
+.warning{
+    background-color: $orange;
+}
+.error{
+    background-color: $red;
+}
+.font-default{
+    color: $black;
+}
+.font-primary{
+    color: $blue;
+}
+.font-success{
+    color: $green;
+}
+.font-warning{
+    color: $orange;
+}
+.font-error{
+    color: $red;
+}
+.border-color-default{
+    color: $black;
+}
+.border-color-primary{
+    color: $blue;
+}
+.border-color-success{
+    color: $green;
+}
+.border-color-warning{
+    color: $orange;
+}
+.border-color-error{
+    color: $red;
+}
