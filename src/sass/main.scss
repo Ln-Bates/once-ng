@@ -4,14 +4,4 @@
 @import "partials/colors";
 @import "partials/gird";
 @import "partials/parts";
-
-#header{
-    $line:60px;
-    line-height: $line;
-    .nav{
-        @extend %clear;
-        li{
-            @extend %p-l;
-        }
-    }
-}
+@import "partials/common";

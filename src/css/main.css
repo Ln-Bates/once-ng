@@ -7,8 +7,12 @@
   position: absolute;
 }
 
-.form-block .form-group label, .form-block .form-group input, #header .nav li {
+.form-block .form-group label, .form-block .form-group input, #header .logo, #header .nav li {
   float: left;
+}
+
+#header .nav {
+  float: right;
 }
 
 .form-block input, .form-block select, .form-block button, .form-block label, .form-control, .thumbnail img, .fieldset {
@@ -19,11 +23,11 @@
   display: inline-block;
 }
 
-.container:before, .form-block .form-group:before, .clear:before, #header .nav:before, .container:after, .form-block .form-group:after, .clear:after, #header .nav:after {
+.container:before, .form-block .form-group:before, .clear:before, #header:before, #header .nav:before, .container:after, .form-block .form-group:after, .clear:after, #header:after, #header .nav:after {
   content: "";
   display: table;
 }
-.container:after, .form-block .form-group:after, .clear:after, #header .nav:after {
+.container:after, .form-block .form-group:after, .clear:after, #header:after, #header .nav:after {
   clear: both;
   overflow: hidden;
 }
@@ -38,6 +42,10 @@
 
 .media .pic.bottom {
   vertical-align: bottom;
+}
+
+#footer p {
+  text-align: center;
 }
 
 .container {
@@ -737,6 +745,24 @@ hr {
 }
 
 /*fieldset  End*/
+body {
+  background-color: #eeeff4;
+}
+
 #header {
+  background: #fff;
+  line-height: 60px;
+}
+#header .nav li {
+  line-height: 60px;
+}
+#header .nav li a {
+  padding: 0 20px;
+}
+
+#footer {
+  background: #fff;
+}
+#footer p {
   line-height: 60px;
 }

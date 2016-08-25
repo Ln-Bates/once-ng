@@ -1,0 +1,30 @@
+body{
+    background-color: $gray;
+}
+
+#header{
+    $line:60px;
+    @extend %clear;
+    background: $white;
+    line-height: $line;
+    .logo{
+        @extend %p-l;
+    }
+    .nav{
+        @extend %clear,%p-r;
+        li{
+            @extend %p-l;
+            line-height: $line;
+            a{
+                padding: 0 20px;
+            }
+        }
+    }
+}
+#footer{
+    background: $white;
+    p{
+        @extend %t-center;
+        line-height: 60px;
+    }
+}
