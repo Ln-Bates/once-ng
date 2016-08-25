@@ -34,6 +34,7 @@ gulp.task("server",function(){
 //  watchFile
 gulp.task("watch",function(){
     gulp.watch("./template/*.html",["minHtml"]);
+    gulp.watch("./src/sass/partials/*.scss");
     gulp.watch("./src/sass/*.scss",["sass"]);
     gulp.watch("./src/images/*.{png,jpg,gif,svg}", ["minImg"]);
     gulp.watch("./src/js/*.js", ["minJs"]);
@@ -51,18 +52,10 @@ gulp.task("minJs",function(){
 
 //  useSass
 gulp.task("sass",function(){
-    sass("./src/sass/*.scss")
+    sass("./src/sass/*.scss",{style:"expanded"})
             .pipe(gulp.dest("./src/css"))
             .pipe(livereload())
 });
-
-//  minCss
-//gulp.task("minCss",function(){
-//    gulp.src("./src/css/*.css")
-//            .pipe(modifyFileName({"suffix":".min"}))
-//            .pipe(minCss())
-//            .pipe(gulp.dest("./dist/css"))
-//});
 
 //  minImg
 gulp.task("minImg",function(){

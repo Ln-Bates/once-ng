@@ -1,6 +1,17 @@
 @import "partials/base";
 
 @import "partials/reset";
-@import "partials/parts";
 @import "partials/colors";
 @import "partials/gird";
+@import "partials/parts";
+
+#header{
+    $line:60px;
+    line-height: $line;
+    .nav{
+        @extend %clear;
+        li{
+            @extend %p-l;
+        }
+    }
+}

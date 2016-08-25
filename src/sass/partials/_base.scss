@@ -22,14 +22,19 @@ $h4:14px;
 $h5:12px;
 $h6:9px;
 $innerSize:15px;
-
+//MediaSize
+$lg:1170px;
+$md-min:970px;
+$md-max:1170px;
+$sm-min:768px;
+$sm-max:970px;
+$xs:768px;
 //  VARIABLE    End
 
 //  MIXIN       Start
 @mixin prefix($attr,$val){
     -webkit-#{$attr}: $val;
     -moz-#{$attr}: $val;
-    -ms-#{$attr}: $val;
     -o-#{$attr}: $val;
     #{$attr}: $val;
 }
@@ -51,6 +56,23 @@ $innerSize:15px;
 }
 @mixin border($color:#eeeff4){
     border: 1px solid $color;
+}
+@mixin clear(){
+    &:before,&:after{
+        content: "";
+        display: table;
+    }
+    &:after{
+        clear: both;
+        overflow: hidden;
+    }
+}
+@mixin createGird(){
+    padding-left:$innerSize ;
+    padding-right: $innerSize;
+    float: left;
+    @include prefix(box-sizing,border-box);
+    @include clear;
 }
 //  MIXIN       End
 
@@ -124,6 +146,26 @@ $innerSize:15px;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+%vertically-inner{
+    padding-left:$innerSize ;
+    padding-right: $innerSize;
+}
+%horizontally-inner{
+    padding-top:$innerSize;
+    padding-bottom:$innerSize;
+}
 //  PLACEHOLDER     End
 
-
+@mixin columns($class, $i: 1, $list: ".col-#{$class}-#{$i}") {
+    @for $i from 2 to 13 {
+        $list: "#{$list}, .col-#{$class}-#{$i}";
+    }
+    #{$list} {
+        @include createGird();
+    }
+    @for $i from 1 to 13 {
+        .col-#{$class}-#{$i}{
+            width: 100% * ($i/12);
+        }
+    }
+}
