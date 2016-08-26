@@ -1,32 +1,28 @@
 .container{
     @extend %clear,%vertically-inner;
     margin: 0 auto;
-    @media (min-width: $lg) {
-        width: $lg;
-    }
-    @media (min-width: $md-min) {   //and (max-width: $md-max)
-        width: $md-min;
+    @media (max-width: $xs) {
+        width: 100%;
     }
     @media (min-width: $sm-min)  {  //and (max-width: $sm-max)
         width: $sm-min;
     }
-    @media (max-width: $xs) {
-        width: 100%;
+    @media (min-width: $md-min) {   //and (max-width: $md-max)
+        width: $md-min;
+    }
+    @media (min-width: $lg) {
+        width: $lg;
     }
 }
-
-@media (min-width: $lg) {
-    @include columns(lg);
+@media (max-width: $xs){
+    @include columns(xs);
 }
-
-@media (min-width: $md-min)  {  //and (max-width: $md-max)
-    @include columns(md);
-}
-
 @media (min-width: $sm-min)  {  //and (max-width: $sm-max)
     @include columns(sm);
 }
-
-@media (max-width: $xs){
-    @include columns(xs);
+@media (min-width: $md-min)  {  //and (max-width: $md-max)
+    @include columns(md);
+}
+@media (min-width: $lg) {
+    @include columns(lg);
 }
