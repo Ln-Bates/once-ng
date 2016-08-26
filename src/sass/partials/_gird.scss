@@ -4,10 +4,10 @@
     @media (min-width: $lg) {
         width: $lg;
     }
-    @media (min-width: $md-min) and (max-width: $md-max) {
+    @media (min-width: $md-min) {   //and (max-width: $md-max)
         width: $md-min;
     }
-    @media (min-width: $sm-min) and (max-width: $sm-max) {
+    @media (min-width: $sm-min)  {  //and (max-width: $sm-max)
         width: $sm-min;
     }
     @media (max-width: $xs) {
@@ -19,11 +19,11 @@
     @include columns(lg);
 }
 
-@media (min-width: $md-min) and (max-width: $md-max) {
+@media (min-width: $md-min)  {  //and (max-width: $md-max)
     @include columns(md);
 }
 
-@media (min-width: $sm-min) and (max-width: $sm-max) {
+@media (min-width: $sm-min)  {  //and (max-width: $sm-max)
     @include columns(sm);
 }
 

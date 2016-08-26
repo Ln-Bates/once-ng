@@ -160,12 +160,21 @@ $xs:768px;
     @for $i from 2 to 13 {
         $list: "#{$list}, .col-#{$class}-#{$i}";
     }
-    #{$list} {
-        @include createGird();
-    }
+    //#{$list} {
+    //    @include createGird();
+    //}
     @for $i from 1 to 13 {
         .col-#{$class}-#{$i}{
             width: 100% * ($i/12);
         }
+    }
+}
+@for $i from 1 to 13{
+    .col-xs-#{$i},
+    .col-sm-#{$i},
+    .col-md-#{$i},
+    .col-lg-#{$i}{
+        @include createGird();
+        width: ($i/12)*100%;
     }
 }

@@ -213,16 +213,18 @@
 
 /*fieldset  Start*/
 .fieldset{
-    @extend %block,%rel;
-    padding-top:6px;
-    padding-bottom:6px;
+    @extend %inline-block,%rel;
+    padding: 6px;
     @include border();
+    @include prefix(border-radius,4px);
     .title{
         @extend %abs,%inline-block;
+        top:0;
         background: #fff;
-        height: 30px;
-        line-height: 30px;
+        height: 25px;
+        line-height: 25px;
         margin-top:-15px;
+        padding: 0 5px;
         left: $innerSize;
     }
     .describe{
