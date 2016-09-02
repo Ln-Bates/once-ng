@@ -32,6 +32,10 @@ app.config(["$routeProvider",function($routeProvider){
                 templateUrl:"/dist/view/media.html",
                 controller:"media"
             })
+            .when("/about",{
+                templateUrl:"/dist/view/about.html",
+                controller:"about"
+            })
             .otherwise({
                 redirectTo:"/home"
             });

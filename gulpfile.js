@@ -66,6 +66,7 @@ gulp.task("minImg",function(){
                 "svgoPlugins": [{"removeViewBox": false}],
                 "use": [minPng()]
             }))
+            .pipe(gulp.dest("./dist/images"));
 });
 
 //  minHtml
@@ -96,7 +97,8 @@ gulp.task("concatLibs",function(){
         "./src/lib/angular.min.js",
         "./src/lib/angular-route.min.js",
         "./src/lib/angular-resource.min.js",
-        "./src/lib/angular-animate.min.js"])
+        "./src/lib/angular-animate.min.js"
+    ])
             .pipe(concatFile("angular.min.js"))
             .pipe(gulp.dest("./dist/js"));
 });

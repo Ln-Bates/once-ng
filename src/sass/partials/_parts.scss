@@ -1,4 +1,35 @@
-/*page change animation     Start*/
+/*
+    btn按钮样式   default,primary,success,warning,error各种按钮的状态及交互效果
+*/
+/*
+    form-inline同行的表单,form-block独自一行的表单
+*/
+/*
+    form-control 块级表单样式
+*/
+/*
+    thumbnail 带字段的缩略图
+*/
+/*
+    list-group 列表组
+*/
+/*
+    table 表格 bordered边线的表格 table-hover 表格行鼠标经过效果
+*/
+/*
+    fieldset 自定义字段解决原生不兼容问题
+*/
+/*
+    nav   普通导航
+*/
+/*
+    drop-down 下拉
+*/
+/*
+    drop-up   上拉
+*/
+/*
+    page change animation     Start*/
 .view-animate {
     transition: .3s all;
     position: absolute;
@@ -232,3 +263,55 @@
     }
 }
 /*fieldset  End*/
+
+/*dropToggle    Start*/
+.drop-down{
+    @extend %rel;
+    .menu{
+        @extend %abs;
+        top: 100%;
+        left: 0;
+    }
+}
+.drop-up{
+    @extend %rel;
+    .menu{
+        @extend %abs;
+        bottom:100%;
+        left: 0;
+    }
+}
+/*dropToggle    End*/
+
+/*nav   Start*/
+.nav{
+    $line-height:60px;
+    width: 100%;
+    line-height: $line-height;
+    @extend %clear;
+    .nav-logo{
+        @extend %p-l;
+    }
+    .nav-menu{
+        @extend %p-r,%clear;
+        li{
+            @extend %p-l;
+        }
+        a{
+            @extend %block;
+            padding: 0 $innerSize;
+            line-height: $line-height;
+            background-color: $gray;
+            &:hover{
+                color: #000;
+            }
+        }
+    }
+    .active{
+        a{
+            color: #000;
+            font-weight:bold;
+        }
+    }
+}
+/*nav   End*/

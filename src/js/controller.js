@@ -19,5 +19,8 @@ controller.controller("remark",["$scope",function($scope){}]);
 //  mediaCtrl
 controller.controller("media",["$scope",function($scope){}]);
 
+//  aboutCtrl
+controller.controller("about",["$scope",function($scope){}]);
+
 //  commonCtrl
 controller.controller("common",["$scope",function($scope){}]);
