@@ -7,11 +7,11 @@
   position: absolute;
 }
 
-.form-block .form-group label, .form-block .form-group input, .nav .nav-logo, .nav .nav-menu li, #header .logo, #home .ul-item li {
+.form-block .form-group label, .form-block .form-group input, .nav .nav-logo, .nav .nav-menu li, #header .logo, #home .ul-item li, #remarks .index, #remarks p {
   float: left;
 }
 
-.nav .nav-menu, #header .search {
+.nav .nav-menu, #header .search, #remarks .user {
   float: right;
 }
 
@@ -44,8 +44,16 @@
   vertical-align: bottom;
 }
 
-#footer p, #home .pic-wrapper h2, #home .pic-wrapper h3, #home .pic-wrapper h4, #home .remarks p, #home .ul-item li a, #home .ul-item li span, #home .ul-item li h6 {
+.text-left {
+  text-align: left;
+}
+
+.text-center, #footer p, #home .pic-wrapper h2, #home .pic-wrapper h3, #home .pic-wrapper h4, #home .remarks p, #home .ul-item li a, #home .ul-item li span, #home .ul-item li h6 {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .container {
@@ -510,7 +518,7 @@ a {
   color: #337ab7;
 }
 a:hover {
-  color: #286090;
+  color: #428bca;
 }
 
 a:hover {
@@ -565,7 +573,7 @@ hr {
 }
 
 .primary {
-  background-color: #286090;
+  background-color: #428bca;
 }
 
 .success {
@@ -585,7 +593,7 @@ hr {
 }
 
 .font-primary {
-  color: #286090;
+  color: #428bca;
 }
 
 .font-success {
@@ -605,7 +613,7 @@ hr {
 }
 
 .border-color-primary {
-  color: #286090;
+  color: #428bca;
 }
 
 .border-color-success {
@@ -1017,6 +1025,7 @@ hr {
 .list-group .title {
   font-size: 16px;
   font-weight: bold;
+  margin-bottom: 15px;
 }
 .list-group .item {
   padding: 0 12px;
@@ -1041,9 +1050,13 @@ hr {
   padding: 8px;
   line-height: 1.42857143;
   border-top: 1px solid #ddd;
+  text-align: left;
 }
 .table thead {
   font-weight: bold;
+}
+.table thead th, .table thead td {
+  border-top: 0;
 }
 .table tbody th {
   font-weight: bold;
@@ -1112,6 +1125,8 @@ hr {
 }
 
 /*nav   End*/
+/*font  where   Start*/
+/*font  where   End*/
 body {
   background-color: #eeeff4;
 }
@@ -1206,4 +1221,18 @@ body {
 }
 #home .ul-item li h6 {
   margin-top: 5px;
+}
+
+#remarks {
+  margin-bottom: 15px;
+}
+#remarks .index {
+  margin-right: 15px;
+}
+#remarks p {
+  line-height: inherit;
+  max-width: 80%;
+}
+#remarks .time {
+  margin-left: 15px;
 }

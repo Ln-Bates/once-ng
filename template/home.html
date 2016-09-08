@@ -2,46 +2,22 @@
 <div id="home">
     <div class="container">
         <div class="pic-wrapper">
-            <div class="col-xs-6">
-                <img src="/dist/images/man.jpg" alt="">
-                <h2 class="title">Man</h2>
-                <h3 class="describe">******************</h3>
-                <h4 class="time">2015-11-21</h4>
-            </div>
-            <div class="col-xs-6">
-                <img src="/dist/images/women.jpg" alt="">
-                <h2 class="title">Women</h2>
-                <h3 class="describe">******************</h3>
+            <div class="col-xs-6" ng-repeat="p in init.pics">
+                <img ng-src="{{p.pic}}" alt="">
+                <h2 class="title">{{p.title}}</h2>
+                <h3 class="describe">{{p.description}}</h3>
                 <h4 class="time">2015-11-21</h4>
             </div>
         </div>
         <div class="remarks">
-            <p>A real hero remains accountable to the end !</p>
+            <p>{{init.remark}}</p>
         </div>
         <div class="icon-group">
             <ul class="ul-item">
-                <li>
-                    <a href="#/media">
-                        <span>Img</span>
-                        <h6>Music</h6>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/list">
-                        <span>Img</span>
-                        <h6>Blog</h6>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/remarks">
-                        <span>Img</span>
-                        <h6>Remarks</h6>
-                    </a>
-                </li>
-                <li>
-                    <a href="#/about">
-                        <span>Img</span>
-                        <h6>About</h6>
+                <li ng-repeat="i in init.icons">
+                    <a ng-attr-href="{{i.src}}">
+                        <span>{{i.alt}}</span>
+                        <h6>{{i.tit}}</h6>
                     </a>
                 </li>
             </ul>

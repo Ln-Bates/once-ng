@@ -93,3 +93,22 @@
         }
     }
 }
+
+#remarks{
+    .index{
+        margin-right: $innerSize;
+        @extend %p-l;
+    }
+    p{
+        @extend %p-l;
+        line-height: inherit;
+        max-width: 80%;
+    }
+    .user{
+        @extend %p-r;
+    }
+    .time{
+        margin-left: $innerSize;
+    }
+    margin-bottom:$innerSize;
+}

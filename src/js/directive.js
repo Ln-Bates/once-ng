@@ -9,7 +9,7 @@ directive.directive("batesHeader",function(){
     return {
         restrict : "E",
         replace:true,
-        //controller:"common",
+        controller:"common",
         templateUrl:"./template/components/header.html"
     }
 });
@@ -19,7 +19,7 @@ directive.directive("batesFooter",function(){
     return {
         restrict : "E",
         replace : true,
-        //controller : "common",
+        controller : "common",
         templateUrl :"./template/components/footer.html"
     }
 });

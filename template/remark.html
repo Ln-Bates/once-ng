@@ -1,2 +1,16 @@
 <bates-header></bates-header>
+<div class="container" id="remarks">
+    <div class="list-group">
+        <div class="title text-center">留言板</div>
+        <div class="title text-right">共 {{all}} 条</div>
+        <ul class="item">
+            <li ng-repeat="item in init" class="clear">
+                <div class="data clear"><span class="index">{{$index+1}}</span><p>{{item.msg}}</p></div>
+                <div class="user">
+                    <span class="user-name"># {{item.user}}</span><span class="time">{{item.time}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
 <bates-footer></bates-footer>

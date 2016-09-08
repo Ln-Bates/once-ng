@@ -192,6 +192,7 @@
     .title{
         font-size: $h3;
         font-weight: bold;
+        margin-bottom:$innerSize;
     }
     .item{
         padding: 0 12px;
@@ -216,9 +217,13 @@
         padding: 8px;
         line-height: 1.42857143;
         border-top:1px solid #ddd;
+        text-align: left;
     }
     thead{
         font-weight: bold;
+        th,td{
+            border-top:0;
+        }
     }
     tbody{
         th{
@@ -315,3 +320,15 @@
     }
 }
 /*nav   End*/
+
+/*font  where   Start*/
+.text-left{
+    @extend %t-left;
+}
+.text-center{
+    @extend %t-center;
+}
+.text-right{
+    @extend %t-right;
+}
+/*font  where   End*/

@@ -1,0 +1,38 @@
+{
+    "logo":"Bates",
+    "pics":[
+        {
+            "pic":"/dist/images/man.jpg",
+            "title":"Man",
+            "description":"****************************"
+        },
+        {
+            "pic":"/dist/images/women.jpg",
+            "title":"Women",
+            "description":"****************************"
+        }
+    ],
+    "remark":"A real hero remains accountable to the end !",
+    "icons":[
+        {
+            "src":"#/media",
+            "alt":"Img1",
+            "tit":"Music"
+        },
+        {
+            "src":"#/list",
+            "alt":"Img2",
+            "tit":"Blog"
+        },
+        {
+            "src":"#/remarks",
+            "alt":"Img3",
+            "tit":"Remarks"
+        },
+        {
+            "src":"#/about",
+            "alt":"Img4",
+            "tit":"About"
+        }
+    ]
+}
