@@ -9,17 +9,11 @@
         var selfState = $this.data("state")||state;
         $this.click(function(){
             switch (selfState){
-                case "":
-                    $menu.toggle();
-                    break;
                 case "fade":
                     $menu.fadeToggle();
                     break;
                 case "slide":
                     $menu.slideToggle();
-                    break;
-                case "show":
-                    $menu.toggle();
                     break;
                 default :
                     $menu.toggle();

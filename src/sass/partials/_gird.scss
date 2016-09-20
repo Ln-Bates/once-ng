@@ -1,4 +1,5 @@
 .container{
+    @include prefix(box-sizing,border-box);
     @extend %clear,%vertically-inner;
     margin: 0 auto;
     @media (max-width: $xs) {
